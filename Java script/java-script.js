@@ -1,5 +1,5 @@
    
-//    for login file 
+//    for login file header 
    document.getElementById('input-btn').addEventListener('click', function(){
         const inputNumber = document.getElementById('input-number');
         const contactNumber = inputNumber.value; 
