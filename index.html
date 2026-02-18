@@ -30,7 +30,6 @@
 
 </head>
 <!-- Login section html code  -->
-
 <body class="min-h-screen max-w-md bg-base-200 mx-auto">
     <div class="logo w-[200px] mx-auto pt-[130px]">
         <img src="/assets/Logo-full.png" alt="">
@@ -41,7 +40,7 @@
             <div class="card-body">
                 <label class="label font-bold text-neutral text-[12px]">Mobile Number</label>
                 <input id="input-number" maxlength="11" minlength="11" type="text" class="input rounded-full bg-base-200 mb-4"
-                    placeholder="Enter your 11 digit number" />
+                    placeholder="Enter your 11 digit number" value="01705717651" />
                 <label class="label font-bold text-neutral text-[12px]">4 Digit Pin</label>
                 <input id="input-pin" maxlength="4" type="pin" class="input rounded-full bg-base-200"
                     placeholder="Enter your 4 digit Password" />
@@ -51,26 +50,6 @@
 
 
  <script>
-    document.getElementById('input-btn').addEventListener('click', function(){
-        // console.log('click the button')
-        const inputNumber = document.getElementById('input-number');
-        const contactNumber = inputNumber.value;
-        // console.log(contactNumber)
-
-        const inputpin = document.getElementById('input-pin');
-        const pin = inputpin.value;
-        // console.log(pin)
-        if(contactNumber=== "01705717651" && pin=== "1234"){
-            alert('login sucess');
-            window.location.assign("/home.html")
-        }
-        else{
-            alert('your password worng');
-            return;
-        }
-    })
-
-
  </script>
 
 <script src="/Java script/java-script.js"></script>
