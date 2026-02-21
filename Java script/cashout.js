@@ -1,17 +1,12 @@
-   document.getElementById('cashout-btn').addEventListener('click', function () {
-    // 1. get the input number 
+document.getElementById('cashout-btn').addEventListener('click', function () {
     const cashoutNumber = getValueFromInput('cashout-number');
     if (cashoutNumber.length !== 11) {
         alert('Invalid Acount number');
         return;
     }
-    // 2. get the acount number
     const cashoutAmount = getValueFromInput('cashout-amount');
-    // 3. get the balance 
-    const balanceInput = document.getElementById('balance');
-    const balance = balanceInput.innerText;
-    // 4. get the new balance 
-    const newBalance = Number(balance) - Number(cashoutAmount);
+    const correntBalance = getBalance();
+    const newBalance = correntBalance - Number(cashoutAmount);
     if (newBalance < 0) {
         alert('Invalid amount balance')
         return;
@@ -19,7 +14,15 @@
     const cashoutPin = getValueFromInput('cashout-pin');
     if (cashoutPin === '1234') {
         alert('Cashout secessfully');
-        balanceInput.innerText = newBalance;
+        setBalance(newBalance);
+        const history = document.getElementById('history-contaneair');
+        const newDiv = document.createElement('div');
+        newDiv.innerHTML = `
+         <div class="transaction bg-base-100 p-5 rounded-[10px]">
+         cashout sucess to account number ${cashoutNumber} amount  ${cashoutAmount} at ${new Date()}
+          </div>
+        `
+        history.append(newDiv);
     }
     else {
         alert('Invalid password');
