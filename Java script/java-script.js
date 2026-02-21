@@ -7,7 +7,7 @@
         const pin = inputpin.value;
         if(contactNumber == "01705717651" && pin == "1234"){
             alert('login sucess');
-            window.location.assign("/home.html")
+            window.location.assign("./home.html")
         }
         else{
             alert('your password worng');
